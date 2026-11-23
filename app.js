@@ -239,7 +239,7 @@
     if(!to||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(em)){f.email.focus();return}
     var ok=function(){f.querySelector('.subok').hidden=false};
     if(/^https?:/.test(to)){var fd=new FormData();fd.append('email',em);fd.append('rythme',r);fd.append('langue',document.documentElement.lang);fetch(to,{method:'POST',body:fd,headers:{Accept:'application/json'}}).then(ok).catch(ok)}
-    else{location.href='mailto:'+to+'?subject='+encodeURIComponent('tefi.la — '+r)+'&body='+encodeURIComponent(em+' · '+r);ok()}});
+    else{location.href='mailto:'+to+'?subject='+encodeURIComponent('tsadik.live — '+r)+'&body='+encodeURIComponent(em+' · '+r);ok()}});
 })();
 
 /* v7 reperes */
@@ -384,7 +384,7 @@ var R7=(function(){
   nav.addEventListener('keydown',function(e){var d=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;if(!d)return;e.preventDefault();var n=(els.indexOf(document.activeElement)+d*sens+N)%N;els[n].focus({preventScroll:true});va(n)});
   addEventListener('resize',rendu);rendu();
   // logo
-  if(br){var nom=P==='a'?'tefi.la':'tsadik.live';br.setAttribute('aria-label',nom);br.textContent='';var sp=document.createElement('span');sp.className='lg7';sp.textContent=nom;br.appendChild(sp);window.__logo7={el:br,nom:nom,p:P,rm:rm}}
+  if(br){var sp=br.querySelector('.lg7');if(!sp){br.textContent='';sp=document.createElement('span');sp.className='lg7';sp.textContent='tsadik.live';var by=document.createElement('small');by.className='by7';by.textContent='by tefi.la';br.append(sp,by)}br.setAttribute('aria-label','tsadik.live');window.__logo7={el:br,nom:'tsadik.live',p:'b',rm:rm}}
 })();
 
 // Bougies : rangée filmée dans les bandeaux, bougie à allumer sur chaque fiche (compteur gardé par hilloulot.dreamnovamcp.com), son au toucher seulement.
